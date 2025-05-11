@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="Images/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Yummy</title>
+</head>
+
+<body>
+  <!-- Bootstrap 5 Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+        <img src="Images/logo.png" alt="Yummy Food Logo" style="width: 40px; height: 40px;" class="me-2">
+        Yummy Food
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#yummyNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="yummyNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Pizza</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Burger</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Cold Drink</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Coffee</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- search bar  -->
+  <div class="banner d-flex align-items-center justify-content-center">
+    <div class="container text-center text-black">
+      <h2 class="mb-3">Search Your Favorite Food</h2>
+      <div class="d-flex justify-content-center">
+        <div class="input-group shadow search-bar" style="max-width: 600px; width: 100%;">
+          <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+            id="foodTypeBtn">
+            Pizza
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#" onclick="setFoodType('Pizza')">Pizza</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFoodType('Burger')">Burger</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFoodType('Cold Drink')">Cold Drink</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFoodType('Coffee')">Coffee</a></li>
+          </ul>
+          <input type="text" id="searchInput" class="form-control" placeholder="Search...">
+          <button class="btn btn-light" type="button" onclick="filterFood()"><i class="bi bi-search"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- contanier-2 -->
+  <div class="container py-5">
+    <h1 class="text-center mb-5">Our Specials</h1>
+    <div class="row g-4">
+
+      <!-- Burger Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/burger1.jpg" class="card-img-top" alt="Burger">
+          <div class="card-body">
+            <h5 class="card-title">Delicious Burger</h5>
+            <p class="card-text">Juicy and cheesy classic burger.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹199</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Pizza Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/pizza.jpg" class="card-img-top" alt="Pizza">
+          <div class="card-body">
+            <h5 class="card-title">Hot Pizza</h5>
+            <p class="card-text">Freshly baked with premium toppings.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹699</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Coffee Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/co1.jpg" class="card-img-top" alt="Coffee">
+          <div class="card-body">
+            <h5 class="card-title">Special Coffee</h5>
+            <p class="card-text">Brewed with love and care.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹299</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- Coldrink Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/$R6R4WHD.jpg" class="card-img-top" alt="Coffee">
+          <div class="card-body">
+            <h5 class="card-title">Special Coldrink</h5>
+            <p class="card-text">Drink Cold Drink.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹179</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row g-4">
+
+      <!-- Burger Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/burger1.jpg" class="card-img-top" alt="Burger">
+          <div class="card-body">
+            <h5 class="card-title">Delicious Burger</h5>
+            <p class="card-text">Juicy and cheesy classic burger.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹199</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Pizza Card -->
+      <div class="col-sm-12 col-md-3 mt-5">
+        <div class="card h-100">
+          <img src="Images/pizza1.jpg" class="card-img-top" alt="Pizza">
+          <div class="card-body">
+            <h5 class="card-title">Hot Pizza</h5>
+            <p class="card-text">Freshly baked with premium toppings.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹399</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Coffee Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/co2.jpg" class="card-img-top" alt="Coffee">
+          <div class="card-body">
+            <h5 class="card-title">Special Coffee</h5>
+            <p class="card-text">Brewed with love and care.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹499</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- Coldrink Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/$R1C21CQ.jpg" class="card-img-top" alt="Coffee">
+          <div class="card-body">
+            <h5 class="card-title">Special Coldrink</h5>
+            <p class="card-text">Drink Cold Drink.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹479</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row g-4">
+
+      <!-- Burger Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/burger2.jpg" class="card-img-top" alt="Burger">
+          <div class="card-body">
+            <h5 class="card-title">Delicious Burger</h5>
+            <p class="card-text">Juicy and cheesy classic burger.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹199</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Pizza Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/pizza3.jpg" class="card-img-top" alt="Pizza">
+          <div class="card-body">
+            <h5 class="card-title">Hot Pizza</h5>
+            <p class="card-text">Freshly baked with premium toppings.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹239</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Coffee Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/co3.jpg" class="card-img-top" alt="Coffee">
+          <div class="card-body">
+            <h5 class="card-title">Special Coffee</h5>
+            <p class="card-text">Brewed with love and care.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹269</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- Coldrink Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/$R70XMUI.jpg" class="card-img-top" alt="Coffee">
+          <div class="card-body">
+            <h5 class="card-title">Special Coldrink</h5>
+            <p class="card-text">Drink Cold Drink.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹120</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row g-4">
+
+      <!-- Burger Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/burger5.jpg" class="card-img-top" alt="Burger">
+          <div class="card-body">
+            <h5 class="card-title">Delicious Burger</h5>
+            <p class="card-text">Juicy and cheesy classic burger.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹199</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Pizza Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/pizza4.jpg" class="card-img-top" alt="Pizza">
+          <div class="card-body">
+            <h5 class="card-title">Hot Pizza</h5>
+            <p class="card-text">Freshly baked with premium toppings.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹699</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Coffee Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/cp4.jpg" class="card-img-top" alt="Coffee">
+          <div class="card-body">
+            <h5 class="card-title">Special Coffee</h5>
+            <p class="card-text">Brewed with love and care.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹269</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- Coldrink Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/$RF9L10J.jpg" class="card-img-top" alt="Coffee">
+          <div class="card-body">
+            <h5 class="card-title">Special Coldrink</h5>
+            <p class="card-text">Drink Cold Drink.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹432</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row g-4">
+
+      <!-- Burger Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/burger7.jpg" class="card-img-top" alt="Burger">
+          <div class="card-body">
+            <h5 class="card-title">Delicious Burger</h5>
+            <p class="card-text">Juicy and cheesy classic burger.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹199</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Pizza Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/pizza7.jpg" class="card-img-top" alt="Pizza">
+          <div class="card-body">
+            <h5 class="card-title">Hot Pizza</h5>
+            <p class="card-text">Freshly baked with premium toppings.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹519</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Coffee Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/co6.jpg" class="card-img-top" alt="Coffee">
+          <div class="card-body">
+            <h5 class="card-title">Special Coffee</h5>
+            <p class="card-text">Brewed with love and care.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹649</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- Coldrink Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/$RIVDC8O.jpg" class="card-img-top" alt="Coffee">
+          <div class="card-body">
+            <h5 class="card-title">Special Coldrink</h5>
+            <p class="card-text">Drink Cold Drink.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹245</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row g-4">
+
+      <!-- Burger Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/burger3.jpg" class="card-img-top" alt="Burger">
+          <div class="card-body">
+            <h5 class="card-title">Delicious Burger</h5>
+            <p class="card-text">Juicy and cheesy classic burger.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹199</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Pizza Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/pizza8.jpg" class="card-img-top" alt="Pizza">
+          <div class="card-body">
+            <h5 class="card-title">Hot Pizza</h5>
+            <p class="card-text">Freshly baked with premium toppings.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹234</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Coffee Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/co8.jpg" class="card-img-top" alt="Coffee">
+          <div class="card-body">
+            <h5 class="card-title">Special Coffee</h5>
+            <p class="card-text">Brewed with love and care.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹456</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- Coldrink Card -->
+      <div class="col-sm-12 col-md-3">
+        <div class="card h-100">
+          <img src="Images/$RLKPPKE.jpg" class="card-img-top" alt="Coffee">
+          <div class="card-body">
+            <h5 class="card-title">Special Coldrink</h5>
+            <p class="card-text">Drink Cold Drink.</p>
+            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+              <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+                Order Now
+              </a>
+              <span class="fw-bold text-danger">₹456</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- form -->
+  <!-- Order Modal -->
+  <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="orderModalLabel">Place Your Order</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+  <form id="orderForm">
+          <div class="modal-body">
+            <!-- Full Name -->
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <!-- Address -->
+            <div class="mb-3">
+              <label for="address" class="form-label">Delivery Address</label>
+              <textarea class="form-control" id="address" name="address" rows="3" placeholder="Enter your address"
+                required></textarea>
+            </div>
+            <!-- Phone Number -->
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number"
+                required>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary">Submit Order</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- grid  -->
+  <div class="container my-5">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h2 class="mb-3">Juicy, Tasty, and Made to Perfection – Our Signature Burgers</h2>
+        <p>Burgers are more than just fast food — they are a celebration of flavor, freshness, and satisfaction. At our
+          restaurant, each burger is crafted with premium ingredients, seasoned to perfection, and grilled to bring out
+          the bold, mouthwatering taste that you crave.
+
+          We use freshly baked buns that are soft yet hold every bite together. Our patties are made from 100% quality
+          meat or plant-based options, depending on your choice. Whether you like classic chicken, spicy grilled, or
+          fully loaded cheese burgers, we have something to suit every appetite.
+
+          Each burger is layered with crispy lettuce, juicy tomatoes, pickles, onions, and our house-made sauces that
+          add the perfect kick of flavor. You can customize your burger with extra cheese, double patties, or go
+          completely veggie — the choice is yours!
+
+          Pair your burger with a side of golden fries and a chilled beverage for the ultimate meal experience.
+          Everything is prepared fresh to order, ensuring your burger is hot, juicy, and satisfying every single time.
+        </p>
+        <div class="d-flex justify-content-between align-items-center mt-3">
+          <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+            Order Now
+          </a>
+          <span class="ms-3 fw-bold text-danger">₹999</span>
+        </div>
+      </div>
+      <!-- Right: Image -->
+      <div class="col-md-6 text-center">
+        <img src="Images/burger3.jpg" alt="Burger and Coffee" class="img-fluid rounded">
+      </div>
+    </div>
+    <div class="row align-items-center mt-5">
+      <!-- left: Image -->
+      <div class="col-md-6 text-center">
+        <img src="Images/pizza4.jpg" alt="Burger and Coffee" class="img-fluid rounded">
+      </div>
+      <!-- right: Text -->
+      <div class="col-md-6">
+        <h2 class="mb-3">Freshly Brewed Coffee – A Cup of Comfort</h2>
+        <p>At our restaurant, we believe that a perfect cup of coffee can transform your day. Our coffee is more than
+          just a drink — it’s an experience crafted with passion. We use only premium, hand-picked coffee beans sourced
+          from the finest plantations. Each cup is brewed fresh, ensuring a rich aroma, smooth texture, and bold flavor
+          that delights with every sip.
+
+          Whether you prefer a classic espresso, a creamy cappuccino, or a strong filter coffee, we have something to
+          suit every mood and moment. Our baristas are trained to maintain the ideal temperature, consistency, and
+          presentation in every cup they serve. From early morning wake-ups to relaxing evening breaks, our coffee is
+          here to energize and comfort.We also offer a variety of milk and dairy-free options like almond, oat, and soy
+          to match your lifestyle and preferences. Pair your coffee with our freshly baked cookies, pastries, or
+          sandwiches to complete your meal.
+          Enjoy it hot or iced — your satisfaction is our priority. With a cozy ambiance and quick service, we aim to
+          make your coffee experience memorable, whether you're dining in or ordering online.</p>
+        <div class="d-flex justify-content-between align-items-center mt-3">
+          <span class="ms-3 fw-bold text-danger">₹299</span>
+          <a href="order-success.htmll" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+            Order Now
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row align-items-center mt-5">
+      <!-- right: Text -->
+      <div class="col-md-6">
+        <h2 class="mb-3">Freshly Brewed Coffee – A Cup of Comfort</h2>
+        <p>At our restaurant, we believe that a perfect cup of coffee can transform your day. Our coffee is more than
+          just a drink — it’s an experience crafted with passion. We use only premium, hand-picked coffee beans sourced
+          from the finest plantations. Each cup is brewed fresh, ensuring a rich aroma, smooth texture, and bold flavor
+          that delights with every sip.
+
+          Whether you prefer a classic espresso, a creamy cappuccino, or a strong filter coffee, we have something to
+          suit every mood and moment. Our baristas are trained to maintain the ideal temperature, consistency, and
+          presentation in every cup they serve. From early morning wake-ups to relaxing evening breaks, our coffee is
+          here to energize and comfort.We also offer a variety of milk and dairy-free options like almond, oat, and soy
+          to match your lifestyle and preferences. Pair your coffee with our freshly baked cookies, pastries, or
+          sandwiches to complete your meal.
+          Enjoy it hot or iced — your satisfaction is our priority. With a cozy ambiance and quick service, we aim to
+          make your coffee experience memorable, whether you're dining in or ordering online.</p>
+        <div class="d-flex justify-content-between align-items-center mt-3">
+          <span class="ms-3 fw-bold text-danger">₹299</span>
+          <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+            Order Now
+          </a>
+        </div>
+      </div>
+       <div class="col-md-6 text-center">
+        <img src="Images/co5.jpg" alt="Burger and Coffee" class="img-fluid rounded">
+      </div>
+    </div>
+    <div class="row align-items-center mt-5">
+      <!-- left: Image -->
+      <div class="col-md-6 text-center">
+        <img src="Images/$RF9L10J.jpg" alt="Burger and Coffee" class="img-fluid rounded">
+      </div>
+      <!-- right: Text -->
+      <div class="col-md-6">
+        <h2 class="mb-3"> Fresh & Natural Fruit Juice</h2>
+        <p>We offer a variety of flavors including Mango, Orange, Pineapple, Pomegranate, and Mixed Fruit — each packed with the real essence of ripe, handpicked fruits. Our juices retain essential nutrients like Vitamin C, potassium, and antioxidants that help in improving immunity, digestion, and overall wellness.
+
+What makes our juices different is the cold-pressing method that we use, which preserves the natural taste and nutrition of fruits. Every bottle is hygienically packed, ensuring that you get the freshest taste every time. Whether you enjoy it chilled, mix it into your smoothie, or serve it with your breakfast — our juices will surely uplift your mood and refresh your body.
+          Whether you prefer a classic espresso, a creamy cappuccino, or a strong filter coffee, we have something to
+          suit every mood and moment. Our baristas are trained to maintain the ideal temperature, consistency, and
+          presentation in every cup they serve. From early morning wake-ups to relaxing evening breaks, our coffee is
+          here to energize and comfort.We also offer a variety of milk and dairy-free options like almond, oat, and soy
+          to match your lifestyle and preferences. Pair your coffee with our freshly baked cookies, pastries, or
+          sandwiches to complete your meal.
+          Enjoy it hot or iced — your satisfaction is our priority. With a cozy ambiance and quick service, we aim to
+          make your coffee experience memorable, whether you're dining in or ordering online.</p>
+       <div class="d-flex justify-content-between align-items-center mt-3">
+  <a href="order-success.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">
+    Order Now
+  </a>
+  <span class="ms-3 fw-bold text-danger">₹999</span>
+</div>
+
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+   <!-- 🌐 Footer Start -->
+<footer class="bg-dark text-white text-center text-lg-start mt-5">
+  <div class="container p-4">
+    <div class="row">
+      
+      <!-- Company Info -->
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Digital Claf</h5>
+        <p>
+          Welcome to yummy-food – your go-to destination for 100% natural fruit juices, Pizza, burger, coffee, and light snacks. 
+          Made fresh on order, our menu brings you healthy, delicious, and refreshing options perfect for any time of the day.
+        </p>
+      </div>
+
+      <!-- Popular Items -->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Popular Items</h5>
+        <ul class="list-unstyled mb-0">
+          <li>🍓 Strawberry Shake</li>
+          <li>🥭 Mango Juice</li>
+          <li>🍌 Banana Smoothie</li>
+          <li>🥪 Veg Sandwich</li>
+          <li>🍲 Pasta Bowl</li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Contact Us</h5>
+        <ul class="list-unstyled mb-0">
+          <li>📞 +91-9266719351</li>
+          <li>📍 Burari, Delhi</li>
+          <li>✉ nikitarwt606@gmial.com</li>
+        </ul>
+        <div class="mt-2">
+          <a href="#" class="text-white me-3">Facebook</a>
+          <a href="#" class="text-white me-3">Instagram</a>
+          <a href="#" class="text-white">WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="text-center p-3 bg-secondary">
+    © 2025 Digital Claf. All rights reserved. | Fresh Juice & Snack Bar
+  </div>
+</footer>
+<!-- 🌐 Footer End -->
+
+</body>
+
+<script>
+  let selectedType = "Pizza";
+
+  function setFoodType(type) {
+    selectedType = type;
+    document.getElementById("foodTypeBtn").innerText = type;
+  }
+
+  function filterFood() {
+    const query = document.getElementById("searchInput").value.toLowerCase();
+    const cards = document.querySelectorAll(".food-card");
+
+    cards.forEach(card => {
+      const cardType = card.getAttribute("data-type");
+      const title = card.querySelector(".card-title").innerText.toLowerCase();
+
+      if (cardType === selectedType && title.includes(query)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>

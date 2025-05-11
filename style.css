@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding:0;
+}
+.banner {
+    background: url("Images/banner.jpg") no-repeat center center;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+  }
+  
+
+.search-bar {
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 600px;
+  width: 100%;
+}
+
+.card-img-top {
+  height: 150px;
+  object-fit: cover;
+}
+
+
